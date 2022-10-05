@@ -14,5 +14,6 @@ code up 100제 풀이
 ### 📌 10/05
 - calculator(random/bypass)
 - list -> 내일 이어서
+- code up 100제 012~020
 
 
