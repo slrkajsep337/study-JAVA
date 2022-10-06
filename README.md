@@ -18,4 +18,10 @@ code up 100제 풀이
 - list -> 내일 이어서
 - code up 100제 012~020
 
+### 📌 10/06
+- collection/list 복습 
+- collection/map,set 실습
+- file 입/출력 실습 (FileReader, BufferedReader)
+- code up 100제 021~030
+
 
