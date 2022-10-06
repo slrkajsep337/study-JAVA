@@ -46,6 +46,7 @@ public class MapExercise {
 
 //        System.out.println(map.get("이수진"));
 
+
         int alphabet[] = new int[26];
 
         for(String key: map.keySet()) {
@@ -56,7 +57,8 @@ public class MapExercise {
                 if (97<=s1.charAt(i) && s1.charAt(i)<=122) {
                     int index = s1.charAt(i) - (int) 'a';   //(int)'a'로 int형으로 형변환 한 a를 뺀 값을 index에 알파벳의 위치로 저장한다.
                     alphabet[index]++;
-                } else { continue; }
+                }
+                //else { continue; }
             }
             for (int i = 0; i < alphabet.length; i++) {
                 if (alphabet[i] != 0) {                            //alphabet[i]!=0이라는 의미는 개수가 0개가 아닌 알파벳만 출력한다는 것을 의미한다.
