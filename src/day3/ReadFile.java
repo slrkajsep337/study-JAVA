@@ -22,5 +22,16 @@ public class ReadFile {
             System.out.println(file);
     }
     }
+    /* 출력결과
+    ./.DS_Store
+    ./JAVA_STUDY.iml
+    ./out
+    ./README.md
+    ./.gitignore
+    ./.git
+    ./a_file.txt
+    ./.idea
+    ./src
+     */
 
 }
