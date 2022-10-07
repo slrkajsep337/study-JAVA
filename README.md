@@ -7,6 +7,15 @@
 code up 100제 풀이 
 
 ---
+### 📌 10/07
+🖥  __대용량 데이터 처리 프로젝트__
+
+
+     🔹 MDIS 사이트의 "2021 인구관련 연간자료"를 이용
+     🔹 지역간 이동횟수만 추출하여 파일로 생성해보기
+     🔹 `BufferedReader` `BufferedWriter`를 이용하여 파일 읽고 쓰기
+     🔹 `HashMap` `List`를 이용하여 데이터 가공 
+- code up 100제 031~040
 
 ### 📌 10/06
 - collection/list 복습 
