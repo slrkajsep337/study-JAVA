@@ -39,7 +39,7 @@ public class PopulationStatistics {
         return pml;
     }
 
-    // 2. ,을 기준으로 데이터를 분리해주는 메소드
+    // 2. "," 을 기준으로 데이터를 분리해주는 메소드
     public PopulationMove parse(String data) {
         //분리해서 배열에 넣기
         //배열에 들어가면서 data값이 string으로 바뀐다 -> 위에 생성자 오버로딩해줘야함

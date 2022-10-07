@@ -3,6 +3,7 @@ package day4.PopulationStatisticsProject;
 //우리가 받아온 데이터 파일에서 원하는 값만 추출하는 메소드
 public class PopulationMove {
 
+    //private으로 변수선언
     private int fromSido;
     private int toSido;
 
