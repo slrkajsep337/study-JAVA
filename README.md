@@ -6,7 +6,7 @@
 
 code up 100제 풀이 
 
-<br>
+---
 
 ### 📌 10/06
 - collection/list 복습 
