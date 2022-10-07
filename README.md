@@ -1,7 +1,7 @@
 # 💻 JAVA_STUDY 221004~
 #### 🖇README 수정후 -> terminal - git pull origin main 
 
-<br>
+---
 자바 실습 및 예제
 
 code up 100제 풀이 
