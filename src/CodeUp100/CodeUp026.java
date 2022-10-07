@@ -2,7 +2,7 @@ package CodeUp100;
 
 import java.util.Scanner;
 
-//미해결
+//해결안됨
 public class CodeUp026 {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
