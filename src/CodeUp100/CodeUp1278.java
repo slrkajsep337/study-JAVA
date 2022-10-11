@@ -4,7 +4,6 @@ import java.util.Scanner;
 
 public class CodeUp1278 {
     public static void main(String[] args) {
-//코드업알고리즘
         Scanner sc = new Scanner(System.in);
         int cnt = 0;
         int num =  sc.nextInt();

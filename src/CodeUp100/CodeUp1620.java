@@ -3,7 +3,6 @@ package CodeUp100;
 import java.util.Scanner;
 
 public class CodeUp1620 {
-    //코드업알고리즘
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         long num = sc.nextLong();
@@ -17,6 +16,7 @@ public class CodeUp1620 {
                     break;
                 } else {
                     num = sum;
+                    sum = 0;
                 }
             } else {
                 sum += num%10;
