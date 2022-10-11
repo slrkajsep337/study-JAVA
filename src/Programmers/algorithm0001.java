@@ -2,6 +2,7 @@ package Programmers;
 
 import java.util.Scanner;
 
+//프로그래머스 알고리즘
 public class algorithm0001 {
     //%연산 이용하기
     public int solution(int n) {
