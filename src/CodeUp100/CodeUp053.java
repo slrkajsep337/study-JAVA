@@ -2,15 +2,13 @@ package CodeUp100;
 
 import java.util.Scanner;
 
-public class CodeUp052 {
+public class CodeUp053 {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-        int a = sc.nextInt();
-        int b = sc.nextInt();
+        int num = sc.nextInt();
 
-        if(a!=b) {
+        if(num==0) {
             System.out.println(1);
         } else System.out.println(0);
     }
 }
-
