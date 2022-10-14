@@ -15,11 +15,20 @@ public class Main {
 
         System.out.println(hospitals.size());
         List<String> lines = new ArrayList<>();
-        lines.add("INSERT INTO `hospital-db`.`seoul-hospital`\n"+
+        lines.add("INSERT INTO `hospital_db`.`seoul_hospital`\n"+
                 "(`id`,`address`,`district`,`category`,`emergencyroom`,`name`,`subdivision`)\n"+
                 "VALUES\n");
-        for (Hospital hospital : hospitals) {
-            lines.add(hospital.getTupleString());
+//        for (Hospital hospital : hospitals) {
+//            lines.add(hospital.getTupleString());
+//        }
+        for(int i=0; i<hospitals.size(); i++) {
+            lines.add(hospitals.get(i).getTupleString());
+            if(i==hospitals.size()-1){
+                lines.add(";");
+                break;
+            }
+            lines.add(",\n");
+
         }
         String sqlFilename = "hospital_insert.sql";
         lrr.createANewFile(sqlFilename);

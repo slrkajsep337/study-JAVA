@@ -31,21 +31,21 @@ public class Hospital {
         this.subdivision = subdivision;         //10
     }
 
-    public String getSqlInsertQuery() {
-        String sql = String.format(
-                "INSERT INTO `hospital-db`.`seoul-hospital`\n"+
-                "(`id`,`address`,`district`,`category`,`emergencyroom`,`name`,`subdivision`)\n"+
-                "VALUES\n"+
-                "('%s','%s','%s','%s',%s,'%s','%s')\n",
-                this.id, this.address, this.district, this.category,
-                this.emergencyRoom, this.name, this.subdivision);
-        return sql;
-    }
+//    public String getSqlInsertQuery() {
+//        String sql = String.format(
+//                "INSERT INTO `hospital-db`.`seoul-hospital`\n"+
+//                "(`id`,`address`,`district`,`category`,`emergencyroom`,`name`,`subdivision`)\n"+
+//                "VALUES\n"+
+//                "('%s','%s','%s','%s',%s,'%s','%s')\n",
+//                this.id, this.address, this.district, this.category,
+//                this.emergencyRoom, this.name, this.subdivision);
+//        return sql;
+//    }
 
 
     public String getTupleString() {
         String sql = String.format(
-                "('%s','%s','%s','%s',%d,'%s','%s'),\n",
+                "('%s','%s','%s','%s',%d,'%s','%s')",
                 this.id, this.address, this.district, this.category,
                 this.emergencyRoom, this.name, this.subdivision);
         return sql;
