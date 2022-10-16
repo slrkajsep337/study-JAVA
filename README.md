@@ -16,7 +16,7 @@ code up 100제 풀이
      🔹 "서울시 병의원 위치정보.csv"를 이용
      🔹 csv 파일에서 원하는 데이터만 추출하기 
      🔹 sql 문법에 맞추어 쿼리문 작성된 .sql파일 생성 
-     🔹 work bench에 생성한 파일 작동하는지 insert해보기 
+     🔹 MySqlworkbench에 생성한 파일 작동하는지 실행 시켜보기 
 
 <details>
 <summary>📆221011~221012</summary>
