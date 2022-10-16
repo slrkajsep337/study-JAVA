@@ -8,6 +8,8 @@ code up 100제 풀이
 
 ---
 ### 📌 10/13~10/14
+- bubblesort, selectionsort, insertionsort
+- code up 100제 061~070
 🖥  __<미니 프로젝트> 대용량 데이터 처리2__
 
      🔹 "서울시 병의원 위치정보.csv"를 이용
@@ -16,7 +18,7 @@ code up 100제 풀이
      🔹 work bench에 생성한 파일 작동하는지 insert해보기 
 
 <details>
-<summary>📆221004~221006</summary>
+<summary>📆221011~221012</summary>
 
 ### 📌 10/12
 - `MaxAndMin` 최대최소찾는 알고리즘+oop적용해보기 
