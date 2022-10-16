@@ -7,6 +7,7 @@
 code up 100제 풀이 
 
 ---
+### 📌 10/17
 ### 📌 10/13~10/14
 - bubblesort, selectionsort, insertionsort
 - code up 100제 061~070
