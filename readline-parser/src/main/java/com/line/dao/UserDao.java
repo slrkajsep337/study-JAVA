@@ -47,6 +47,7 @@ public class UserDao {
 //        conn.close();
 //    }
 
+
         //connection을 분리하면 엑세스디나이드오류가 난다 왜??????????
         public void add(User user) throws SQLException, ClassNotFoundException {
             //system의 환경변수(environment)값을 가져와서 Key, valuer 값으로 넣음
