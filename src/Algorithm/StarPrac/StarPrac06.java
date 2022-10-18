@@ -18,6 +18,8 @@ public class StarPrac06 {
             System.out.println("");
         }
     }
+
+
     public static void main(String[] args) {
         StarPrac06 sp = new StarPrac06();
         sp.square(5);
