@@ -35,6 +35,7 @@ class UserDaoTest {
 //        Assertions.assertEquals("ddd", selectedUser.getName());
 
 
+        //Factory 패턴을 사용하면 이렇게 테스트코드에서만 필요한 객체를 선언해서 사용할 수 있다
 //        UserDao udao = new UserDao(new LocalConnection());
 //        UserDao userDao = new UserDaoFactory().awsUserDao();
 //        String id = "22";
