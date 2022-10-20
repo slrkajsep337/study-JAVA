@@ -118,31 +118,29 @@ public class UserDao {
 
     }
 
-    public void delete(String id) throws SQLException, ClassNotFoundException {
+    public void delete() throws SQLException, ClassNotFoundException {
 
-//        Connection conn = dbconnection.getConnection();
-
-        Map<String, String> env = System.getenv();
-        //key에 해당하는 각 value 값을 변수에 넣음
-        String dbHost = env.get("DB_HOST");
-        String dbUser = env.get("DB_USER");
-        String dbPassword = env.get("DB_PASSWORD");
-
-        //드라이버를 메모리에 로딩하는 과정. 생략 가능
-        Class.forName("com.mysql.cj.jdbc.Driver");
-
-        Connection conn = DriverManager.getConnection(dbHost, dbUser, dbPassword); //mysql db와 연결
-
+        Connection conn = dbconnection.getConnection();
         PreparedStatement ps = conn.prepareStatement(
-                "DELETE FROM users"
-        );
-
-        ps.setString(1, id);
+                "DELETE FROM users");
 
         ps.executeUpdate();
-
         ps.close();
         conn.close();
+    }
+
+    public int getCount() throws SQLException, SQLException, ClassNotFoundException {
+        Connection conn = dbconnection.getConnection();
+        PreparedStatement ps = conn.prepareStatement("select count(*) from users");
+        ResultSet rs = ps.executeQuery();
+        rs.next();
+        int cnt = rs.getInt(1);
+
+        rs.close();
+        ps.close();
+        conn.close();
+
+        return cnt;
     }
 
     public static void main(String[] args) throws SQLException, ClassNotFoundException {
