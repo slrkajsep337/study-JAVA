@@ -26,6 +26,7 @@ class UserDaoTest {
         this.userDao = context.getBean("awsUserDao", UserDao.class);
     }
 
+    @Test
     void FindById() {
         assertThrows(EmptyResultDataAccessException.class, () -> {
             userDao.FindById("30");
@@ -57,7 +58,7 @@ class UserDaoTest {
 
 //        //spring에서 가져다 쓸 수 있는 getBean 함수
         UserDao userDao = context.getBean("awsUserDao", UserDao.class);
-        userDao.delete();
+        userDao.deleteAll();
         assertEquals(0,userDao.getCount());
 
         userDao.add(user1);

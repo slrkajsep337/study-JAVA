@@ -6,7 +6,7 @@ import java.sql.SQLException;
 public class LocalConnection implements DBConnection{
 
     @Override
-    public Connection getConnection() throws ClassNotFoundException, SQLException {
+    public Connection getConnection() throws SQLException {
         return null;
     }
 

@@ -7,5 +7,6 @@ import java.util.Map;
 
 public interface DBConnection {
 
-    Connection getConnection() throws ClassNotFoundException, SQLException;
+    Connection getConnection() throws SQLException;
+
 }
