@@ -1,7 +1,9 @@
 package com.line.dao;
 
+import com.line.dao.domain.JdbcContext;
 import com.line.dao.domain.User;
 
+import javax.sql.DataSource;
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
@@ -15,41 +17,37 @@ import java.util.Map;
 
 public class UserDao {
 
-    private DBConnection dbc;
+//    private DBConnection dbc;
 
-    public UserDao(DBConnection dbconnection) {
-        this.dbc = dbconnection;
+    private final DataSource ds;
+    private final JdbcContext jdbcContext;
+    //UserDao가 이제는 jdbcContext에 의존하도록 의존관계가 바뀜
+
+    public UserDao(DataSource ds) {
+        this.ds = ds;
+        this.jdbcContext = new JdbcContext(ds);
     }
 
-    public void jdbcContextWithStatementStrategy(StatementStrategy stmt) throws SQLException {
-        Connection conn = null;
-        PreparedStatement ps = null;
 
-        try{
-            conn = dbc.getConnection();
-            ps = stmt.makePreparedStatement(conn);
-            ps.executeUpdate();
-        } catch (SQLException e) {
-            throw e;
-        } finally {
-            if(ps != null) {
-                try {
-                    ps.close();
-                } catch(SQLException e) {
-                }
-            }
-            if( conn != null) {
-                try {
-                    conn.close();
-                } catch (SQLException e) {
-                }
-            }
-        }
-    }
+    //final ? 한번 초기화되면 바꿀 수 없음, 불변 -> final로 사용할 수 있다면 최대한 final로 사용하는 것이 좋다
+    //DI를 할 때 final 을 사용하는 이유? 장점 ?
+    //1. 무조건 불변이기 때문에 변화를 생각하며 코드를 짜주지 않아도 된다
+    //2. 값이 변할 여지가 없기 때문에 값이 변하는데 필요한 부가적인 메모리 할당이 필요없다 -> 메모리
+    //3. DI하고나서 DataSource가 바뀌는 경우 - 무슨일이 일어날지 예측이 되지 않기 때문에 final 사용
+    //4. 스프링에서 DI가 되었다는 것은 이미 Factory에서 조립이 끝났다는 의미이다
+    //결론 -> 변화하지 않는게 좋으므로 final을 사용한다 + 신뢰성
+    public void add(final User user) throws SQLException {
+        //익명함수로 만들기 -> 익명내부클래스는 구현하는 인터페이스를 생성자처럼 이용해서 오브젝트로 만든다
+        jdbcContext.workWithStatementStrategy(new StatementStrategy() {
+            public PreparedStatement makePreparedStatement(Connection c) throws SQLException {
+                PreparedStatement ps =  c.prepareStatement("INSERT INTO users(id,name,password) VALUES(?,?,?)");
+                ps.setString(1,user.getId());
+                ps.setString(2,user.getName());
+                ps.setString(3,user.getPassword());
 
-    public void add(User user) throws SQLException {
-        AddStrategy as = new AddStrategy(user);
-        jdbcContextWithStatementStrategy(as);
+                return ps;
+            }
+        });
     }
 
 //    public void add(User user) {
@@ -113,11 +111,16 @@ public class UserDao {
     }
 
     public void deleteAll() throws SQLException {
-        jdbcContextWithStatementStrategy(new DeleteAllStrategy());
+        jdbcContext.workWithStatementStrategy(new StatementStrategy() {
+            @Override
+            public PreparedStatement makePreparedStatement(Connection connection) throws SQLException {
+                return connection.prepareStatement("delete from users");
+            }
+        });
     }
 
     public int getCount() throws SQLException {
-        Connection conn = dbc.getConnection();
+        Connection conn = ds.getConnection();
         PreparedStatement ps = conn.prepareStatement("select count(*) from users");
         ResultSet rs = ps.executeQuery();
         rs.next();
