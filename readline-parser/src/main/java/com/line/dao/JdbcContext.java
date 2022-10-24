@@ -1,4 +1,4 @@
-package com.line.dao.domain;
+package com.line.dao;
 
 import com.line.dao.StatementStrategy;
 
