@@ -1,12 +1,9 @@
 package com.line.dao;
 
-import com.line.dao.domain.JdbcContext;
 import com.line.dao.domain.User;
 
 import javax.sql.DataSource;
 import java.sql.*;
-import java.util.ArrayList;
-import java.util.List;
 import java.util.Map;
 
 //1. gradle 프로젝트(모듈) 생성
@@ -111,12 +108,18 @@ public class UserDao {
     }
 
     public void deleteAll() throws SQLException {
-        jdbcContext.workWithStatementStrategy(new StatementStrategy() {
-            @Override
-            public PreparedStatement makePreparedStatement(Connection connection) throws SQLException {
-                return connection.prepareStatement("delete from users");
+        executeSql("delete from users");
+    }
+
+    private void executeSql(final String query) throws SQLException {
+        this.jdbcContext.workWithStatementStrategy(
+            new StatementStrategy() {
+                @Override
+                public PreparedStatement makePreparedStatement(Connection connection) throws SQLException {
+                    return connection.prepareStatement(query);
+                }
             }
-        });
+        );
     }
 
     public int getCount() throws SQLException {
