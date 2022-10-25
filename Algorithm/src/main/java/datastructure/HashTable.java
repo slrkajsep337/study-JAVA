@@ -1,4 +1,4 @@
-import static java.util.Objects.hash;
+package datastructure;
 
 public class HashTable {
     private int size = 10000;
