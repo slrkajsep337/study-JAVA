@@ -20,8 +20,20 @@ public class FindingPrimenum {
 //            }
 //        }
 
+//        for(int n: nums) {
+//            for(int i=2; i<n/2; i++) {
+//                if(n%i == 0) {
+//                    check = false;
+//                    break;
+//                }
+//            }
+//            if(check == true) {
+//                arr.add(n);
+//            }
+//        }
+
         for(int n: nums) {
-            for(int i=2; i<n/2; i++) {
+            for(int i=2; i*i<n; i++) {
                 if(n%i == 0) {
                     check = false;
                     break;
@@ -31,6 +43,8 @@ public class FindingPrimenum {
                 arr.add(n);
             }
         }
+
+
 
         for(int a: arr) {
             System.out.println(a);
