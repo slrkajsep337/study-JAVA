@@ -15,9 +15,24 @@ public class CodeUp2083 {
 
         int startidx = 0;
         int endidx = n;
-        int mididx = (startidx+endidx)/2;
+        int mididx;
+        int answer = -1;
 
 
+        while (startidx<=endidx) {
+            mididx = (startidx+endidx)/2;
+            if(arr[mididx]<s) startidx = mididx+1;
+            else if(arr[mididx]>s) endidx = mididx-1;
+            else if(mididx==0) {
+                answer = -1;
+                break;
+            }
+            else {
+                answer = mididx+1;
+                break;
+            }
+        }
 
+        System.out.println(answer);
     }
 }
