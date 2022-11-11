@@ -9,21 +9,30 @@ public class SecretMap {
         String temp2;
         String answertemp = "";
         int sum=0;
+//        for(int i=0; i<n; i++) {
+//            temp1 = Integer.toBinaryString(arr1[i]);
+//            temp2 = Integer.toBinaryString(arr2[i]);
+//            sum = Integer.parseInt(temp1)+Integer.parseInt(temp2);
+            // 비트연산 사용
+//            sum = Integer.parseInt(Integer.toBinaryString(arr1[i] | arr2[i]));
+//            for(int j=0; j<n; j++) {
+//                if(sum%10>0) answertemp = "#"+answertemp;
+//                else answertemp = " "+answertemp;
+//                sum /= 10;
+//            }
+//            answer[i] = answertemp;
+//            answertemp = "";
+//        }
 
-        for(int i=0; i<n; i++) {
-            temp1 = Integer.toBinaryString(arr1[i]);
-            temp2 = Integer.toBinaryString(arr2[i]);
-            sum = Integer.parseInt(temp1)+Integer.parseInt(temp2);
-            for(int j=0; j<n; j++) {
-                if(sum%10>0) answertemp = "#"+answertemp;
-                else answertemp = " "+answertemp;
-                sum /= 10;
-            }
-            answer[i] = answertemp;
-            answertemp = "";
+        for (int i = 0; i < n; i++) {
+            answer[i] = Integer.toBinaryString(arr1[i] | arr2[i])
+                    .replace("1","#").replace("0", " ");
+            // 자릿수 맞춰주는 연산
+            answer[i] = " ".repeat(n - answer[i].length()) + answer[i];
         }
 
         return answer;
+
     }
 
     public static void main(String[] args) {
