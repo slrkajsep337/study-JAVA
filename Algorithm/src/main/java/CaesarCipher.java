@@ -7,25 +7,22 @@ public class CaesarCipher {
         char temp;
 
         for(char c: s.toCharArray()) {
-            if((int)c==32) {
+            if ((int) c == 32) {
                 answer += ' ';
-            } else {
-                if ((char)(c+n)>='z' || ('a'>(char)(c+n) && (char)(c+n)>='Z')){
-                    temp = (char)(c+n-26);
-                } else {
-                    temp = (char)(c+n);
-                }
+            } else if ('a' <= c && c <= 'z') {
+                temp = (char) (c + n);
+                if (temp > 'z') temp = (char) (c + n - 26);
+                answer += temp;
+            } else if ('A' <= c && c <= 'Z') {
+                temp = (char) (c + n);
+                if (temp > 'Z') temp = (char) (c + n - 26);
                 answer += temp;
             }
+
         }
-        return answer;
+            return answer;
     }
-
     public static void main(String[] args) {
-        char temp;
-        temp = (char)('z');
-
-        System.out.println((char)(temp+1-26));
 
     }
 
