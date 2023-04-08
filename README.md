@@ -19,8 +19,6 @@
      🔹 sql 문법에 맞추어 쿼리문 작성된 .sql파일 생성 
      🔹 MySqlworkbench에 생성한 파일 작동하는지 실행 시켜보기 
 
-<summary>📆221011~221012</summary>
-
 ### 📌 10/12
 - `MaxAndMin` 최대최소찾는 알고리즘+oop적용해보기 
      - design patterts중 template 패턴 적용
@@ -43,8 +41,6 @@
      🔹 `BufferedReader` `BufferedWriter`를 이용하여 파일 읽고 쓰기
      🔹 Java collection의 `HashMap` `List`를 이용하여 데이터 가공 
 - code up 100제 031~040
-
-<summary>📆221004~221006</summary>
 
 ### 📌 10/06
 - collection/list 복습 
