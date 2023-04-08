@@ -7,13 +7,6 @@
 자바 알고리즘
 
 ---
-### 📌 10/17~10/25
-
-📒  __<토비의 스프링3>로 스프링 공부하기__
-
-     🔹 
-
-
 ### 📌 10/13~10/14
 - bubblesort, selectionsort, insertionsort
 - 자바로 쿼리 작성해주는 파일 만들기 
@@ -26,7 +19,6 @@
      🔹 sql 문법에 맞추어 쿼리문 작성된 .sql파일 생성 
      🔹 MySqlworkbench에 생성한 파일 작동하는지 실행 시켜보기 
 
-<details>
 <summary>📆221011~221012</summary>
 
 ### 📌 10/12
@@ -41,7 +33,6 @@
      - %연산자를 이용하여 풀이해보기
 - code up 1278, 1620
 - code up 100제 041~050
-</details>
 
 ### 📌 10/07
 🖥  __<미니 프로젝트> 대용량 데이터 처리__
@@ -52,7 +43,7 @@
      🔹 `BufferedReader` `BufferedWriter`를 이용하여 파일 읽고 쓰기
      🔹 Java collection의 `HashMap` `List`를 이용하여 데이터 가공 
 - code up 100제 031~040
-<details>
+
 <summary>📆221004~221006</summary>
 
 ### 📌 10/06
@@ -72,7 +63,7 @@
 - 화폐 계산 알고리즘
 - 홀수/짝수 계산 알고리즘
 - code up 100제 001~011
-</details>
+
 
 
 
