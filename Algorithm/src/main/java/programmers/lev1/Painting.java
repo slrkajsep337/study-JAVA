@@ -1,7 +1,7 @@
 package programmers.lev1;
 
 //덧칠하기
-public class painting {
+public class Painting {
     public int solution(int n, int m, int[] section) {
         int answer = 0;
         int now = section[0]-1;
